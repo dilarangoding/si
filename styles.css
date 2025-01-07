@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dropdown-menu {
+    display: none;
+}
+.dropdown-menu.show {
+    display: block;
+}
+
+.diagonal-lines {
+    position: relative;
+    overflow: hidden;
+}
+.diagonal-lines::before,
+.diagonal-lines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #e5e7eb 25%, transparent 25%);
+    z-index: 1;
+}
+.diagonal-lines::after {
+    background: linear-gradient(-45deg, #e5e7eb 25%, transparent 25%);
+}
+.dropdown-menu {
+    display: none;
+}
+.dropdown-menu.show {
+    display: block;
+}
+
+.swiper-container {
+    width: 100%;
+    padding: 32px;
+}
+.swiper-slide {
+    width: 200px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: #666;
+}
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.content.active {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.active {
+    transform: rotate(90deg);
+}
+
+
+testimonial-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-small {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+}

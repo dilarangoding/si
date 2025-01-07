@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sistem Informasi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+  </head>
+  <body class="font-roboto min-h-screen">
+
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Telkom University" class="h-10">
+                    <div class="h-8 w-px bg-gray-300"></div>
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2240e25b1f1c5f9ce1959af6315de1d3c085ba4c81cb5f827d5e3d7be01051c4?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Sistem Informasi" class="h-10">
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <a href="/index.html" class=" text-sky-400 hover:text">Beranda</a>
+                    
+                    <div class="dropdown relative">
+                        <button id="dropdownButton" 
+                                class="text-gray-700 flex items-center space-x-1">
+                            <span>Tentang Kami</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                 class="h-4 w-4 transition-transform" 
+                                 fill="none" 
+                                 viewBox="0 0 24 24" 
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" 
+                                      stroke-linejoin="round" 
+                                      stroke-width="2" 
+                                      d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="dropdownMenu" 
+                             class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="tentangkami.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tentang SI</a>
+                            <a href="kurikulum.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kurikulum</a>
+                            <a href="fakultas-staff.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Fakultas dan Staf</a>
+                            <a href="alumni.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Alumni</a>
+                            <a href="kerja-praktek.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kerja Praktek</a>
+                        </div>
+                    </div>
+
+                    <a href="final-project.html" class="text-gray-700">Final Project</a>
+                    <a href="mbkm.html" class="text-gray-700">MBKM</a>
+                    <a href="https://smb.telkomuniversity.ac.id/purwokerto/"target="_blank" class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Pendaftaran</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 py-8 pt-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div
+            class="w-16 h-16 bg-peach-100 rounded-full flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-orange-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 9h6"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 13h6"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Data Engineer</h3>
+          <p class="text-gray-600">
+            Focus on managing and organizing data effectively to support
+            business decisions.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div
+            class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-purple-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Sistem Analisis Governance</h3>
+          <p class="text-gray-600">
+            Manage and implement system analysis processes following best
+            practices.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-green-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Programming</h3>
+          <p class="text-gray-600">
+            Learn various programming languages and development techniques.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-32">
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold mb-4">Sambutan Kaprodi</h2>
+          <p class="text-gray-600 mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
+          </p>
+          <p class="text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
+          </p>
+        </div>
+        <div class="w-full md:w-1/3">
+          <div class="relative">
+            <img
+              src="/assets/images/kaprodi.png"
+              alt="Kepala Program"
+              class="rounded-lg w-full"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-white p-4 rounded-b-lg"
+            >
+              <h4 class="font-bold">Dwi Mustika Kusumawardani</h4>
+              <p class="text-gray-600">S.Kom., M.Kom</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative rounded-lg overflow-hidden mb-32 h-96">
+        <img
+          src="/assets/images/vidio.png"
+          alt="Telkom Universitas"
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+        >
+          <button
+            class="bg-white rounded-full w-16 h-16 flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-blue-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row items-center justify-between bg-white rounded-lg p-8 shadow-lg border-r-2 mb-32"
+      >
+        <div class="flex-1">
+          <h2 class="text-4xl font-bold mb-2">
+            Bagaimana Cara Menjadi <br />Mahasiswa S1 Sistem Informasi?
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Kembangkan minat dan bakat melalui ke ilmuan terbaru. Kini saatnya
+            industri mencarimu
+          </p>
+          <button
+            class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-blue-600"
+          >
+            Selengkapnya
+          </button>
+        </div>
+        <div class="w-full md:w-1/3 mt-6 md:mt-0">
+          <img
+            src="/assets/images/cta1.png"
+            alt="Student"
+            class="rounded-lg w-full"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6 text-center shadow-md p-9 rounded-lg">
+        <div>
+          <h3 class="text-4xl font-bold mb-2">50</h3>
+          <p class="text-gray-600">Dosen</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-bold mb-2">10.0000</h3>
+          <p class="text-gray-600">Mahasiswa</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-bold mb-2">90</h3>
+          <p class="text-gray-600">Penghargaan</p>
+        </div>
+      </div>
+
+      <section class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Dosen S1 Sistem Informasi
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <img
+              src="/assets/images/Khairun-Nisa-Meiah-NgafidinS.Pd.png"
+              alt="Lecturer"
+              class="mx-auto rounded-lg mb-4"
+            />
+            <h3 class="font-bold">Oleg Dmitrievich Rostov, S.Sos (OOR)</h3>
+            <p class="text-gray-600">17345167</p>
+          </div>
+          <div class="text-center">
+            <img
+              src="/assets/images/Mahazzam-Afrad-S.Kom_.Kom.png"
+              alt="Lecturer"
+              class="mx-auto rounded-lg mb-4"
+            />
+            <h3 class="font-bold">Oleg Dmitrievich Rostov, S.Sos (OOR)</h3>
+            <p class="text-gray-600">17345167</p>
+          </div>
+          <div class="text-center">
+            <img
+              src="/assets/images/Resad-SetyadiS.Si.png"
+              alt="Lecturer"
+              class="mx-auto rounded-lg mb-4"
+            />
+            <h3 class="font-bold">Oleg Dmitrievich Rostov, S.Sos (OOR)</h3>
+            <p class="text-gray-600">17345167</p>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <button
+            class="bg-blue-500 text-white px-8 py-2 rounded-full hover:bg-blue-600"
+          >
+            Selengkapnya
+          </button>
+        </div>
+      </section>
+
+      <section class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Mitra dan Kerjasama
+        </h2>
+        <div class="swiper-container bg-white p-8">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="/assets/images/1024px-Huawei_Standard_logo.png"
+                alt="Huawei"
+                class="h-12"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/assets/images/Moratelindo 1.png"
+                alt="Morata"
+                class="h-12"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/assets/images/1920px-Telkom_Indonesia_2013.svg.png"
+                alt="Telkom"
+                class="h-12"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/assets/images/PINS_logo 1.png"
+                alt="Pink"
+                class="h-12"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/Voksel 1.png" alt="VE" class="h-12" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-4">
+          Sarana dan Prasarana
+        </h2>
+        <p class="text-center text-gray-600 mb-12">S1 Sistem Informasi</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="/assets/images/lab1.png"
+              alt="Lab HPC"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-center">Laboratorium HPC</h3>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="/assets/images/lab2.png"
+              alt="Lab Pemrograman"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-center">Laboratorium Pemrograman</h3>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="/assets/images/lab3.png"
+              alt="Lab Pemrogram"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-center">Laboratorium Pemrogram</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-6xl mx-auto px-4 py-16 bg-white">
+        <h2 class="text-3xl font-bold text-center mb-4">Prestasi Mahasiswa</h2>
+        <p class="text-center text-gray-600 mb-12">S1 Sistem Informasi</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-7">
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="/assets/images/prestasi.png"
+              alt="Achievement 1"
+              class="w-full"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-center">Lolos Pendanaan Program PKM</h3>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="/assets/images/prestasi.png"
+              alt="Achievement 2"
+              class="w-full"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-center">Lolos Pendanaan Program PKM</h3>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="/assets/images/prestasi.png"
+              alt="Achievement 3"
+              class="w-full"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-center">Lolos Pendanaan Program PKM</h3>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="/assets/images/prestasi.png"
+              alt="Achievement 4"
+              class="w-full"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-center">Lolos Pendanaan Program PKM</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Berita dan Kegiatan
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="/assets//images/news.png" alt="News 1" class="w-full" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">
+                Konsep dan Penjelasan Bahasa S1 Pemrograman
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                lacinia odio vitae vestibulum vestibulum.
+              </p>
+              <p class="text-gray-400 text-sm mb-4">22-01-2024</p>
+              <button class="text-blue-500 hover:text-blue-600">
+                Lebih Lengkap
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="/assets//images/news.png" alt="News 2" class="w-full" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">
+                Konsep dan Penjelasan Bahasa S1 Pemrograman
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                lacinia odio vitae vestibulum vestibulum.
+              </p>
+              <p class="text-gray-400 text-sm mb-4">22-01-2024</p>
+              <button class="text-blue-500 hover:text-blue-600">
+                Lebih Lengkap
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="/assets//images/news.png" alt="News 3" class="w-full" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">
+                Konsep dan Penjelasan Bahasa S1 Pemrograman
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                lacinia odio vitae vestibulum vestibulum.
+              </p>
+              <p class="text-gray-400 text-sm mb-4">22-01-2024</p>
+              <button class="text-blue-500 hover:text-blue-600">
+                Lebih Lengkap
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <button
+            class="bg-blue-500 text-white px-8 py-2 rounded-full hover:bg-blue-600"
+          >
+            Selengkapnya
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <footer class="bg-[linear-gradient(0deg,#00D084_0%,#7BDCB5_0.01%,#52ADE8_100%)] text-slate-800 mt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Telkom University" class="h-10">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d99bcf5476c00980c86d7e7b4a198e8915953d8b40edf45a3c8e9e54161b7ead?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Fakultas" class="h-10">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/81e149bf5bb8f1324c162a73fa6e4334c512df6118e3ec46442501b52c6dd5ce?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="SI Logo" class="h-10">
+                    </div>
+                    <p class="text-sm">Jl. DI Panjaitan No.128, Karangreja, Purwokerto Kidul, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53147 </p>
+                </div>
+
+                <div>
+                    <ul class="space-y-2">
+                        <li>Fakultas Informatika</li>
+                        <li>Fakultas Rekayasa Industri</li>
+                        <li>Fakultas Teknik Elektro</li>
+                        <li>Fakultas Ekonomi Dan Bisnis</li>
+                        <li>Fakultas Industri Kreatif</li>
+                        <li>Fakultas Ilmu Terapan</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Info Kontak</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-6 h-6 bg-white rounded"></div>
+                            <span>No Telpon</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-6 h-6 bg-white rounded"></div>
+                            <span>Email</span>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold mt-8 mb-4">Social Media</h4>
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 bg-white rounded"></div>
+                        <div class="w-8 h-8 bg-white rounded"></div>
+                        <div class="w-8 h-8 bg-white rounded"></div>
+                        <div class="w-8 h-8 bg-white rounded"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center pt-8 mt-8 border-t border-white/30">
+                <p>© Telkom University | Universitas Swasta Terbaik </p>
+            </div>
+        </div>
+    </footer>   
+    <script src="script.js"></script>
+  </body>
+</html>
