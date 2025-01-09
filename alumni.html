@@ -1,220 +1,540 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alumni - S1 Sistem Informasi Telkom University</title>
-    <link href="output.css" rel="stylesheet">
-</head>
-<body class="min-h-screen">
-
+    <link href="output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="font-roboto min-h-screen">
     <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Telkom University" class="h-10">
-                    <div class="h-8 w-px bg-gray-300"></div>
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2240e25b1f1c5f9ce1959af6315de1d3c085ba4c81cb5f827d5e3d7be01051c4?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Sistem Informasi" class="h-10">
-                </div>
-                
-                <div class="flex items-center space-x-8">
-                    <a href="/index.html" class="text-gray-700">Beranda</a>
-                    
-                    <div class="dropdown relative">
-                        <button id="dropdownButton" 
-                                class=" text-gray-700 flex items-center space-x-1">
-                            <span>Tentang Kami</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                 class="h-4 w-4 transition-transform" 
-                                 fill="none" 
-                                 viewBox="0 0 24 24" 
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" 
-                                      stroke-linejoin="round" 
-                                      stroke-width="2" 
-                                      d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div id="dropdownMenu" 
-                             class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                            <a href="tentangkami.html" class="block px-4 py-2 text-sm text-sky-400 hover:text-sky-600">Tentang SI</a>
-                            <a href="kurikulum.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kurikulum</a>
-                            <a href="fakultas-staff.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Fakultas dan Staf</a>
-                            <a href="alumni.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Alumni</a>
-                            <a href="kerja-praktek.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kerja Praktek</a>
-                        </div>
-                    </div>
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-4">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+              alt="Telkom University"
+              class="h-10"
+            />
+            <div class="h-8 w-px bg-gray-300"></div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/2240e25b1f1c5f9ce1959af6315de1d3c085ba4c81cb5f827d5e3d7be01051c4?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+              alt="Sistem Informasi"
+              class="h-10"
+            />
+          </div>
 
-                    <a href="final-project.html" class="text-gray-700">Final Project</a>
-                    <a href="mbkm.html" class="text-gray-700">MBKM</a>
-                    <a href="https://smb.telkomuniversity.ac.id/purwokerto/"target="_blank" class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Pendaftaran</a>
-                </div>
+          <div class="flex items-center space-x-8" id="menu">
+            <a href="/index.html" class="text-gray-700">Beranda</a>
+
+            <div class="dropdown relative">
+              <button
+                id="dropdownButton"
+                class="text-sky-400 flex items-center space-x-1"
+              >
+                <span>Tentang Kami</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="dropdownMenu"
+                class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50"
+              >
+                <a
+                  href="tentangkami.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Tentang SI</a
+                >
+                <a
+                  href="kurikulum.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Kurikulum</a
+                >
+                <a
+                  href="fakultas-staff.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Fakultas dan Staf</a
+                >
+                <a
+                  href="alumni.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Alumni</a
+                >
+                <a
+                  href="kerja-praktek.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Kerja Praktek</a
+                >
+              </div>
             </div>
+
+            <a href="final-project.html" class="text-gray-700">Final Project</a>
+            <a href="mbkm.html" class="text-gray-700">MBKM</a>
+            <a
+              href="https://smb.telkomuniversity.ac.id/purwokerto/"
+              target="_blank"
+              class="bg-custom-gradient text-white px-6 py-2 rounded-full hover:bg-teal-500 transition"
+              >Pendaftaran</a
+            >
+          </div>
         </div>
+      </div>
     </nav>
-    
-
-    <section class="pt-20 bg-gradient-to-b from-sky-400 via-teal-400 to-teal-300">
-        <div class="container mx-auto px-4 py-32 text-center text-white">
-            <h1 class="text-5xl font-bold mb-4">Alumni</h1>
-            <p class="text-xl text-gray-600">S1 Sistem Informasi</p>
-        </div>
+    <section
+      class="pt-20 bg-custom-gradient from-sky-400 via-teal-400 to-teal-300"
+    >
+      <div class="container mx-auto px-4 py-32 text-center text-white">
+        <h1 class="text-5xl font-bold mb-4">Alumni</h1>
+        <p class="text-xl">S1 Sistem Informasi</p>
+      </div>
     </section>
 
     <section class="max-w-6xl mx-auto px-4 py-16">
-        <h2 class="text-3xl font-bold text-center mb-4">Testimoni</h2>
-        <h3 class="text-2xl font-bold text-center mb-12">Alumni</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg p-6 shadow-sm testimonial-card">
-                <div class="flex-grow">
-                    <p class="text-gray-600 mb-8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti."</p>
-                </div>
-                <div class="flex items-center mt-4">
-                    <img src="/assets/images/alumni.png" alt="John" class="w-12 h-12 rounded-full mr-4"/>
-                    <div>
-                        <h4 class="font-bold">John Baihakr Silva</h4>
-                        <p class="text-sm text-gray-600">Alumni in 2022</p>
-                        <p class="text-sm text-gray-600">Hero di Perusahaan jalan jatibaru</p>
-                    </div>
-                </div>
-            </div>
+      <h2 class="text-3xl font-bold text-center mb-4">Testimoni</h2>
+      <h3 class="text-2xl font-bold text-center mb-12">Alumni</h3>
 
-            <div class="bg-white rounded-lg p-6 shadow-sm testimonial-card">
-                <div class="flex-grow">
-                    <p class="text-gray-600 mb-8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti."</p>
-                </div>
-                <div class="flex items-center mt-4">
-                    <img src="/assets/images/alumni.png" alt="John" class="w-12 h-12 rounded-full mr-4"/>
-                    <div>
-                        <h4 class="font-bold">John Baihakr Silva</h4>
-                        <p class="text-sm text-gray-600">Alumni in 2022</p>
-                        <p class="text-sm text-gray-600">Hero di Perusahaan jalan jatibaru</p>
-                    </div>
-                </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-lg testimonial-card">
+          <div class="flex-grow">
+            <p class="text-gray-600 mb-8">
+              "Menjadi bagian dari prodi Sistem Informasi adalah pengalaman yang
+              luar biasa. Program ini tidak hanya memberikan pemahaman mendalam
+              tentang teknologi dan sistem, tetapi juga membentuk saya menjadi
+              seorang profesional yang siap menghadapi dunia kerja. Dukungan
+              dari dosen yang kompeten dan fasilitas yang memadai membuat saya
+              mampu meraih karier sebagai Software Developer di perusahaan
+              ternama. Terima kasih, Sistem Informasi!"
+            </p>
+          </div>
+          <div class="flex items-center mt-4">
+            <img
+              src="/assets/images/alumni.png"
+              alt="John"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <h4 class="font-bold">Rizky Aulia</h4>
+              <p class="text-sm text-gray-600">Alumni SI 2022</p>
+              <p class="text-sm text-gray-600">
+                Software Developer di PT. TechSolution
+              </p>
             </div>
-
-            <div class="bg-white rounded-lg p-6 shadow-sm testimonial-card">
-                <div class="flex-grow">
-                    <p class="text-gray-600 mb-8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti."</p>
-                </div>
-                <div class="flex items-center mt-4">
-                    <img src="/assets/images/alumni.png" alt="John" class="w-12 h-12 rounded-full mr-4"/>
-                    <div>
-                        <h4 class="font-bold">John Baihakr Silva</h4>
-                        <p class="text-sm text-gray-600">Alumni in 2022</p>
-                        <p class="text-sm text-gray-600">Hero di Perusahaan jalan jatibaru</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
 
+        <div class="bg-white rounded-lg p-6 shadow-lg testimonial-card">
+          <div class="flex-grow">
+            <p class="text-gray-600 mb-8">
+              "Kuliah di Sistem Informasi mengajarkan saya pentingnya
+              keseimbangan antara teknologi, bisnis, dan manajemen. Ilmu yang
+              saya dapatkan di kampus membantu saya untuk memahami kebutuhan
+              industri, dari analisis sistem hingga pengelolaan proyek IT.
+              Sekarang saya bekerja sebagai IT Consultant, dan saya bersyukur
+              telah mendapatkan pondasi yang kuat dari prodi ini."
+            </p>
+          </div>
+          <div class="flex items-center mt-4">
+            <img
+              src="/assets/images/ALUMNI-2.png"
+              alt="John"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <h4 class="font-bold">Nabila Putri</h4>
+              <p class="text-sm text-gray-600">Alumni SI 2022</p>
+              <p class="text-sm text-gray-600">
+                IT Consultant di ABC Consulting
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-lg testimonial-card">
+          <div class="flex-grow">
+            <p class="text-gray-600 mb-8">
+              "Saya sangat menghargai pengalaman belajar di prodi Sistem
+              Informasi, terutama fokusnya pada pemecahan masalah nyata di dunia
+              bisnis melalui teknologi. Praktik dan proyek yang diberikan selama
+              kuliah membuat saya lebih percaya diri saat menghadapi tantangan
+              di dunia kerja. Kini, saya bekerja sebagai Data Analyst, dan saya
+              bangga menjadi alumni Sistem Informasi"
+            </p>
+          </div>
+          <div class="flex items-center mt-4">
+            <img
+              src="/assets/images/ALUMNI-3.png"
+              alt="John"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <h4 class="font-bold">Fahri Pratama</h4>
+              <p class="text-sm text-gray-600">Alumni SI 2022</p>
+              <p class="text-sm text-gray-600">Data Analyst di XYZ Corp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    `
     <section class="max-w-6xl mx-auto px-4 py-16">
-        <h2 class="text-3xl font-bold text-center mb-4">Alumni Berprestasi</h2>
-        <h3 class="text-center text-gray-600 mb-8">S1 Sistem Informasi</h3>
+      <h2 class="text-3xl font-bold text-center mb-4">Alumni Berprestasi</h2>
+      <h3 class="text-center text-gray-600 mb-8">S1 Sistem Informasi</h3>
 
-        <div class="bg-white rounded-lg shadow-sm overflow-x-auto">
-            <table class="w-full min-w-full">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Alumni</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Prestasi</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IPK</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">1</td>
-                        <td class="px-6 py-4">
-                            <div class="flex items-center">
-                                <img src="/assets/images/alumni.png" alt="" class="profile-small rounded-full mr-3"/>
-                                <div>
-                                    <div class="font-medium">Svetlana Ivanovna Baryshnikova</div>
-                                    <div class="text-sm text-gray-500">Jakarta dan tempat dia kerja</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4">Cumlaude</td>
-                        <td class="px-6 py-4">Pemenang lomba Sains Internasional</td>
-                        <td class="px-6 py-4">4.0</td>
-                    </tr>
+      <div class="bg-white rounded-lg shadow-lg overflow-x-auto">
+        <table class="w-full min-w-full">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                No
+              </th>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Nama Alumni
+              </th>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Status
+              </th>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Lama Studi
+              </th>
 
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">2</td>
-                        <td class="px-6 py-4">
-                            <div class="flex items-center">
-                                <img src="/assets/images/alumni.png" alt="" class="profile-small rounded-full mr-3"/>
-                                <div>
-                                    <div class="font-medium">John Lennno</div>
-                                    <div class="text-sm text-gray-500">Jakarta dan PT Inti Persero</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4">Cumlaude</td>
-                        <td class="px-6 py-4">Pemenang lomba Sains Internasional</td>
-                        <td class="px-6 py-4">4.0</td>
-                    </tr>
-                    
-
-                </tbody>
-            </table>
-        </div>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                IPK
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">1</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">OKTA VERINA TRI UTAMI</div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Pujian</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.63</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">2</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">FLORENCIA IRENA HENDYANTORO</div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Sangat Memuaskan</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.23</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">3</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">OVEL CANSERIFO FIKANTI</div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Pujian</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.85</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">4</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">
+                      FARKHAN HARYADI BERBUDI BOWOLEKSONO
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Pujian</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.84</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">5</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">IFFA DWI MAULIDINA</div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Sangat Memuaskan</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.45</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">6</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">
+                      Svetlana Ivanovna Baryshnikova
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Pujian</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.63</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">7</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">SHOBUN KHOLLIED ANWAR</div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Pujian</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.52</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">8</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">WIKE PARWATI</div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Pujian</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.85</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">9</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">INTAN YULIA WIBOWO</div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Pujian</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">3.53</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">10</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/alumni.png"
+                    alt=""
+                    class="profile-small rounded-full mr-3"
+                  />
+                  <div>
+                    <div class="font-medium">MARTINA FAJARIYANTI</div>
+                    <div class="text-sm text-gray-500">
+                      Jakarta dan tempat dia kerja
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">Pujian</td>
+              <td class="px-6 py-4">3 Tahun 5 Bulan</td>
+              <td class="px-6 py-4">4.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
-  
-    <footer class="bg-[linear-gradient(0deg,#00D084_0%,#7BDCB5_0.01%,#52ADE8_100%)] text-slate-800 mt-20">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Telkom University" class="h-10">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d99bcf5476c00980c86d7e7b4a198e8915953d8b40edf45a3c8e9e54161b7ead?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Fakultas" class="h-10">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/81e149bf5bb8f1324c162a73fa6e4334c512df6118e3ec46442501b52c6dd5ce?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="SI Logo" class="h-10">
-                    </div>
-                    <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
-                </div>
 
-                <div>
-                    <ul class="space-y-2">
-                        <li>Fakultas Informatika</li>
-                        <li>Fakultas Rekayasa Industri</li>
-                        <li>Fakultas Teknik Elektro</li>
-                        <li>Fakultas Ekonomi Dan Bisnis</li>
-                        <li>Fakultas Industri Kreatif</li>
-                        <li>Fakultas Ilmu Terapan</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Info Kontak</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-6 h-6 bg-white rounded"></div>
-                            <span>No Telpon</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <div class="w-6 h-6 bg-white rounded"></div>
-                            <span>Email</span>
-                        </div>
-                    </div>
-
-                    <h4 class="font-bold mt-8 mb-4">Social Media</h4>
-                    <div class="flex space-x-4">
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                    </div>
-                </div>
+    <footer class="bg-custom-gradient text-slate-800 mt-20">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+                alt="Telkom University"
+                class="h-10"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d99bcf5476c00980c86d7e7b4a198e8915953d8b40edf45a3c8e9e54161b7ead?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+                alt="Fakultas"
+                class="h-10"
+              />
             </div>
-            
-            <div class="text-center pt-8 mt-8 border-t border-white/30">
-                <p>© Telkom University | Universitas Swasta Terbaik </p>
+            <p class="text-sm">
+              Jl. DI Panjaitan No.128, Karangreja, Purwokerto Kidul, Kec.
+              Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53147
+            </p>
+          </div>
+
+          <div>
+            <ul class="space-y-2">
+              <li>Fakultas Informatika</li>
+              <li>Fakultas Rekayasa Industri</li>
+              <li>Fakultas Teknik Elektro</li>
+              <li>Fakultas Ekonomi Dan Bisnis</li>
+              <li>Fakultas Industri Kreatif</li>
+              <li>Fakultas Ilmu Terapan</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Info Kontak</h4>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-6 h-6 bg-white rounded flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-phone text-gray-600"></i>
+                </div>
+                <span>(022) 7566456</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-6 h-6 bg-white rounded flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-envelope text-gray-600"></i>
+                </div>
+                <span>info@telkomuniversity.ac.id</span>
+              </div>
             </div>
+            <h4 class="font-bold mt-8 mb-4">Social Media</h4>
+            <div class="flex space-x-4">
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-telegram text-blue-500"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-facebook text-blue-600"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-twitter text-blue-400"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-instagram text-pink-500"></i>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="text-center pt-8 mt-8 border-t border-white/30">
+          <p>© Telkom University | Universitas Swasta Terbaik</p>
+        </div>
+      </div>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,140 +1,1592 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kurikulum - S1 Sistem Informasi Telkom University</title>
-    <link href="output.css" rel="stylesheet">
-</head>
-<body class="min-h-screen">
-    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Telkom University" class="h-10">
-                    <div class="h-8 w-px bg-gray-300"></div>
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2240e25b1f1c5f9ce1959af6315de1d3c085ba4c81cb5f827d5e3d7be01051c4?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Sistem Informasi" class="h-10">
-                </div>
-                
-                <div class="flex items-center space-x-8">
-                    <a href="/index.html" class="text-gray-700">Beranda</a>
-                    
-                    <div class="dropdown relative">
-                        <button id="dropdownButton" 
-                                class="text-gray-700 flex items-center space-x-1">
-                            <span>Tentang Kami</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                 class="h-4 w-4 transition-transform" 
-                                 fill="none" 
-                                 viewBox="0 0 24 24" 
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" 
-                                      stroke-linejoin="round" 
-                                      stroke-width="2" 
-                                      d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div id="dropdownMenu" 
-                             class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                            <a href="tentangkami.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tentang SI</a>
-                            <a href="kurikulum.html" class="block px-4 py-2 text-sm text-sky-400 hover:text-sky-600 ">Kurikulum</a>
-                            <a href="fakultas-staff.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Fakultas dan Staf</a>
-                            <a href="alumni.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Alumni</a>
-                            <a href="kerja-praktek.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kerja Praktek</a>
-                        </div>
-                    </div>
+    <link href="output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-out;
+      }
 
-                    <a href="final-project.html" class="text-gray-700">Final Project</a>
-                    <a href="mbkm.html" class="text-gray-700">MBKM</a>
-                    <a href="https://smb.telkomuniversity.ac.id/purwokerto/"target="_blank" class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Pendaftaran</a>
-                </div>
+      .batch-item.active .content {
+        max-height: 2000px;
+        margin-top: 1.5rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #e2e8f0;
+        padding: 0.75rem;
+      }
+    </style>
+  </head>
+  <body class="font-roboto min-h-screen">
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-4">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+              alt="Telkom University"
+              class="h-10"
+            />
+            <div class="h-8 w-px bg-gray-300"></div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/2240e25b1f1c5f9ce1959af6315de1d3c085ba4c81cb5f827d5e3d7be01051c4?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+              alt="Sistem Informasi"
+              class="h-10"
+            />
+          </div>
+
+          <div class="flex items-center space-x-8" id="menu">
+            <a href="/index.html" class="text-gray-700">Beranda</a>
+
+            <div class="dropdown relative">
+              <button
+                id="dropdownButton"
+                class="text-sky-400 flex items-center space-x-1"
+              >
+                <span>Tentang Kami</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="dropdownMenu"
+                class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50"
+              >
+                <a
+                  href="tentangkami.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Tentang SI</a
+                >
+                <a
+                  href="kurikulum.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Kurikulum</a
+                >
+                <a
+                  href="fakultas-staff.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Fakultas dan Staf</a
+                >
+                <a
+                  href="alumni.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Alumni</a
+                >
+                <a
+                  href="kerja-praktek.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Kerja Praktek</a
+                >
+              </div>
             </div>
+
+            <a href="final-project.html" class="text-gray-700">Final Project</a>
+            <a href="mbkm.html" class="text-gray-700">MBKM</a>
+            <a
+              href="https://smb.telkomuniversity.ac.id/purwokerto/"
+              target="_blank"
+              class="bg-custom-gradient text-white px-6 py-2 rounded-full hover:bg-teal-500 transition"
+              >Pendaftaran</a
+            >
+          </div>
         </div>
+      </div>
     </nav>
 
-    <section class="pt-20 bg-gradient-to-b from-sky-400 via-teal-400 to-teal-300">
-        <div class="container mx-auto px-4 py-32 text-center text-white">
-            <h1 class="text-5xl font-bold mb-4">Kurikulum</h1>
-            <p class="text-2xl">S1 Sistem Informasi</p>
-        </div>
+    <section
+      class="pt-20 bg-custom-gradient from-sky-400 via-teal-400 to-teal-300"
+    >
+      <div class="container mx-auto px-4 py-32 text-center text-white">
+        <h1 class="text-5xl font-bold mb-4">Kurikulum</h1>
+        <p class="text-2xl">S1 Sistem Informasi</p>
+      </div>
     </section>
 
     <section class="container mx-auto px-4 py-16">
-        <div class="space-y-6">
-            <div class="flex justify-between items-center p-6 rounded-xl border hover:shadow-lg transition">
-                <h3 class="text-xl font-semibold">Angkatan 2020</h3>
-                <button class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Lebih Lengkap</button>
+      <div class="space-y-6">
+        <div
+          class="batch-item bg-white rounded-xl border hover:shadow-lg transition"
+        >
+          <div
+            class="flex justify-between items-center p-6 cursor-pointer header"
+          >
+            <h3 class="text-xl font-semibold">Angkatan 2020</h3>
+            <button
+              class="bg-custom-gradient text-white px-6 py-2 rounded-full hover:opacity-90 transition"
+            >
+              Lebih Lengkap
+            </button>
+          </div>
+
+          <div class="content px-6 pb-6">
+            <div class="mb-6"></div>
+
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">
+                  Mahasiswa Program Non MBKM
+                </h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah A</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah B</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">Mahasiswa Program MBKM</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>MBKM Course A</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>MBKM Course B</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>MBKM Course C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>MBKM Course D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="flex justify-between items-center p-6 rounded-xl border hover:shadow-lg transition">
-                <h3 class="text-xl font-semibold">Angkatan 2021</h3>
-                <button class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Lebih Lengkap</button>
-            </div>
-            <div class="flex justify-between items-center p-6 rounded-xl border hover:shadow-lg transition">
-                <h3 class="text-xl font-semibold">Angkatan 2022</h3>
-                <button class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Lebih Lengkap</button>
-            </div>
-            <div class="flex justify-between items-center p-6 rounded-xl border hover:shadow-lg transition">
-                <h3 class="text-xl font-semibold">Angkatan 2023</h3>
-                <button class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Lebih Lengkap</button>
-            </div>
-            <div class="flex justify-between items-center p-6 rounded-xl border hover:shadow-lg transition">
-                <h3 class="text-xl font-semibold">Angkatan 2024</h3>
-                <button class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Lebih Lengkap</button>
-            </div>
+          </div>
         </div>
+
+        <div
+          class="batch-item bg-white rounded-xl border hover:shadow-lg transition"
+        >
+          <div
+            class="flex justify-between items-center p-6 cursor-pointer header"
+          >
+            <h3 class="text-xl font-semibold">Angkatan 2021</h3>
+            <button
+              class="bg-custom-gradient text-white px-6 py-2 rounded-full hover:opacity-90 transition"
+            >
+              Lebih Lengkap
+            </button>
+          </div>
+          <div class="content px-6 pb-6">
+            <div class="mb-6"></div>
+
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">
+                  Mahasiswa Program Non MBKM
+                </h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah A</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah B</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">Mahasiswa Program MBKM</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>MBKM Course A</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>MBKM Course B</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>MBKM Course C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>MBKM Course D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="batch-item bg-white rounded-xl border hover:shadow-lg transition"
+        >
+          <div
+            class="flex justify-between items-center p-6 cursor-pointer header"
+          >
+            <h3 class="text-xl font-semibold">Angkatan 2022</h3>
+            <button
+              class="bg-custom-gradient text-white px-6 py-2 rounded-full hover:opacity-90 transition"
+            >
+              Lebih Lengkap
+            </button>
+          </div>
+          <div class="content px-6 pb-6">
+            <div class="mb-6"></div>
+
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">Mahasiswa Regular</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 5</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 6</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">Mahasiswa Fast Track</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 5</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 6</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="batch-item bg-white rounded-xl border hover:shadow-lg transition"
+        >
+          <div
+            class="flex justify-between items-center p-6 cursor-pointer header"
+          >
+            <h3 class="text-xl font-semibold">Angkatan 2023</h3>
+            <button
+              class="bg-custom-gradient text-white px-6 py-2 rounded-full hover:opacity-90 transition"
+            >
+              Lebih Lengkap
+            </button>
+          </div>
+          <div class="content px-6 pb-6">
+            <div class="mb-6"></div>
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">Mahasiswa Regular</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 3</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 4</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 5</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 6</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">Mahasiswa Fast Track</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 3</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 4</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 5</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 6</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="batch-item bg-white rounded-xl border hover:shadow-lg transition"
+        >
+          <div
+            class="flex justify-between items-center p-6 cursor-pointer header"
+          >
+            <h3 class="text-xl font-semibold">Angkatan 2024</h3>
+            <button
+              class="bg-custom-gradient text-white px-6 py-2 rounded-full hover:opacity-90 transition"
+            >
+              Lebih Lengkap
+            </button>
+          </div>
+          <div class="content px-6 pb-6">
+            <div class="mb-6"></div>
+
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">Mahasiswa Regular</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 1</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah A</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah B</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 2</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 3</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 4</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 5</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 6</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div>
+                <h4 class="font-medium mb-4 text-lg">Mahasiswa Fast Track</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 1</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah A</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah B</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 2</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 3</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 4</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 5</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 6</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 7</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h5 class="font-medium mb-3">Semester 8</h5>
+                    <div class="overflow-x-auto">
+                      <table>
+                        <thead>
+                          <tr class="bg-gray-50">
+                            <th class="text-left">No.</th>
+                            <th class="text-left">Mata Kuliah</th>
+                            <th class="text-center">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td width="40">1</td>
+                            <td>Mata Kuliah C</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Mata Kuliah D</td>
+                            <td class="text-center">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer class="bg-[linear-gradient(0deg,#00D084_0%,#7BDCB5_0.01%,#52ADE8_100%)] text-slate-800 mt-20">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Telkom University" class="h-10">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d99bcf5476c00980c86d7e7b4a198e8915953d8b40edf45a3c8e9e54161b7ead?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Fakultas" class="h-10">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/81e149bf5bb8f1324c162a73fa6e4334c512df6118e3ec46442501b52c6dd5ce?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="SI Logo" class="h-10">
-                    </div>
-                    <p class="text-sm">Jl. DI Panjaitan No.128, Karangreja, Purwokerto Kidul, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53147 </p>
-                </div>
-
-                <div>
-                    <ul class="space-y-2">
-                        <li>Fakultas Informatika</li>
-                        <li>Fakultas Rekayasa Industri</li>
-                        <li>Fakultas Teknik Elektro</li>
-                        <li>Fakultas Ekonomi Dan Bisnis</li>
-                        <li>Fakultas Industri Kreatif</li>
-                        <li>Fakultas Ilmu Terapan</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Info Kontak</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-6 h-6 bg-white rounded"></div>
-                            <span>No Telpon</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <div class="w-6 h-6 bg-white rounded"></div>
-                            <span>Email</span>
-                        </div>
-                    </div>
-
-                    <h4 class="font-bold mt-8 mb-4">Social Media</h4>
-                    <div class="flex space-x-4">
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                    </div>
-                </div>
+    <footer class="bg-custom-gradient text-slate-800 mt-20">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+                alt="Telkom University"
+                class="h-10"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d99bcf5476c00980c86d7e7b4a198e8915953d8b40edf45a3c8e9e54161b7ead?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+                alt="Fakultas"
+                class="h-10"
+              />
             </div>
-            
-            <div class="text-center pt-8 mt-8 border-t border-white/30">
-                <p>© Telkom University | Universitas Swasta Terbaik </p>
+            <p class="text-sm">
+              Jl. DI Panjaitan No.128, Karangreja, Purwokerto Kidul, Kec.
+              Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53147
+            </p>
+          </div>
+
+          <div>
+            <ul class="space-y-2">
+              <li>Fakultas Informatika</li>
+              <li>Fakultas Rekayasa Industri</li>
+              <li>Fakultas Teknik Elektro</li>
+              <li>Fakultas Ekonomi Dan Bisnis</li>
+              <li>Fakultas Industri Kreatif</li>
+              <li>Fakultas Ilmu Terapan</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Info Kontak</h4>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-6 h-6 bg-white rounded flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-phone text-gray-600"></i>
+                </div>
+                <span>(022) 7566456</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-6 h-6 bg-white rounded flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-envelope text-gray-600"></i>
+                </div>
+                <span>info@telkomuniversity.ac.id</span>
+              </div>
             </div>
+            <h4 class="font-bold mt-8 mb-4">Social Media</h4>
+            <div class="flex space-x-4">
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-telegram text-blue-500"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-facebook text-blue-600"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-twitter text-blue-400"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-instagram text-pink-500"></i>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="text-center pt-8 mt-8 border-t border-white/30">
+          <p>© Telkom University | Universitas Swasta Terbaik</p>
+        </div>
+      </div>
     </footer>
+    <script>
+      document.querySelectorAll(".header").forEach((header) => {
+        header.addEventListener("click", () => {
+          const batchItem = header.parentElement;
+          const wasActive = batchItem.classList.contains("active");
+
+          document.querySelectorAll(".batch-item").forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          if (!wasActive) {
+            batchItem.classList.add("active");
+          }
+        });
+      });
+    </script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

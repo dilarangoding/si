@@ -11,225 +11,452 @@
     <title>Sistem Informasi</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
   </head>
   <body class="font-roboto min-h-screen">
-
     <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Telkom University" class="h-10">
-                    <div class="h-8 w-px bg-gray-300"></div>
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2240e25b1f1c5f9ce1959af6315de1d3c085ba4c81cb5f827d5e3d7be01051c4?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Sistem Informasi" class="h-10">
-                </div>
-                
-                <div class="flex items-center space-x-8">
-                    <a href="/index.html" class=" text-sky-400 hover:text">Beranda</a>
-                    
-                    <div class="dropdown relative">
-                        <button id="dropdownButton" 
-                                class="text-gray-700 flex items-center space-x-1">
-                            <span>Tentang Kami</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                 class="h-4 w-4 transition-transform" 
-                                 fill="none" 
-                                 viewBox="0 0 24 24" 
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" 
-                                      stroke-linejoin="round" 
-                                      stroke-width="2" 
-                                      d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div id="dropdownMenu" 
-                             class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                            <a href="tentangkami.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tentang SI</a>
-                            <a href="kurikulum.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kurikulum</a>
-                            <a href="fakultas-staff.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Fakultas dan Staf</a>
-                            <a href="alumni.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Alumni</a>
-                            <a href="kerja-praktek.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kerja Praktek</a>
-                        </div>
-                    </div>
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-4">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+              alt="Telkom University"
+              class="h-10"
+            />
+            <div class="h-8 w-px bg-gray-300"></div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/2240e25b1f1c5f9ce1959af6315de1d3c085ba4c81cb5f827d5e3d7be01051c4?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+              alt="Sistem Informasi"
+              class="h-10"
+            />
+          </div>
 
-                    <a href="final-project.html" class="text-gray-700">Final Project</a>
-                    <a href="mbkm.html" class="text-gray-700">MBKM</a>
-                    <a href="https://smb.telkomuniversity.ac.id/purwokerto/"target="_blank" class="bg-teal-400 text-white px-6 py-2 rounded-full hover:bg-teal-500 transition">Pendaftaran</a>
-                </div>
+          <div class="flex items-center space-x-8" id="menu">
+            <a href="/index.html" class="text-gray-700">Beranda</a>
+
+            <div class="dropdown relative">
+              <button
+                id="dropdownButton"
+                class="text-gray-700 flex items-center space-x-1"
+              >
+                <span>Tentang Kami</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="dropdownMenu"
+                class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50"
+              >
+                <a
+                  href="tentangkami.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Tentang SI</a
+                >
+                <a
+                  href="kurikulum.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Kurikulum</a
+                >
+                <a
+                  href="fakultas-staff.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Fakultas dan Staf</a
+                >
+                <a
+                  href="alumni.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Alumni</a
+                >
+                <a
+                  href="kerja-praktek.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-custom-gradient hover:text-white"
+                  >Kerja Praktek</a
+                >
+              </div>
             </div>
+
+            <a href="final-project.html" class="text-gray-700">Final Project</a>
+            <a href="mbkm.html" class="text-sky-400">MBKM</a>
+            <a
+              href="https://smb.telkomuniversity.ac.id/purwokerto/"
+              target="_blank"
+              class="bg-custom-gradient text-white px-6 py-2 rounded-full hover:bg-custom-gradient transition"
+              >Pendaftaran</a
+            >
+          </div>
         </div>
+      </div>
     </nav>
 
-    <section class="pt-20 bg-gradient-to-b from-sky-400 via-teal-400 to-teal-300">
-        <div class="container mx-auto px-4 py-32 text-center text-white">
-            <h1 class="text-5xl font-bold mb-4">MBKM</h1>
-            <p class="text-2xl">S1 Sistem Informasi</p>
-        </div>
+    <section
+      class="pt-20 bg-custom-gradient from-sky-400 via-teal-400 to-teal-300"
+    >
+      <div class="container mx-auto px-4 py-32 text-center text-white">
+        <h1 class="text-5xl font-bold mb-4">MBKM</h1>
+        <p class="text-2xl">S1 Sistem Informasi</p>
+      </div>
     </section>
-
-
-    <section class="py-16 ">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h1 class="text-3xl font-bold">Merdeka Belajar Kampus Merdeka</h1>
-                <p class="text-xl text-gray-600 mt-4">S1 Sistem Informasi</p>
-               
-            </div>
-    
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-lg font-bold mb-4">Syarat & Ketentuan Mengikuti Kegiatan MBKM</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                        <li>Mahasiswa S1 Sistem Informasi Telkom University Purwokerto</li>
-                        <li>Mahasiswa yang mendaftar program MBKM paling minimal semester 6</li>
-                        <li>Mahasiswa yang memiliki IPK paling minimal 3.00</li>
-                        <li>Mahasiswa harus mengisi surat kesanggupan</li>
-                    </ul>
-                </div>
-    
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-lg font-bold mb-4">Alur Kegiatan MBKM</h3>
-                    <ol class="list-decimal pl-5 space-y-2 text-gray-700">
-                        <li>Daftar MBKM di website</li>
-                        <li>Menerima hasil lolos/tidak lolos</li>
-                        <li>Melakukan pendaftaran ke portal MBKM</li>
-                        <li>Mengisi logbook</li>
-                        <li>Menyerahkan laporan akhir</li>
-                    </ol>
-                </div>
-            </div>
-    
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 text-center shadow-sm p-9 pt-16">
-                <div>
-                    <p class="text-4xl font-bold">59.088</p>
-                    <p class="text-gray-600">Total Peserta</p>
-                </div>
-                <div>
-                    <p class="text-4xl font-bold">9</p>
-                    <p class="text-gray-600">Program Utama</p>
-                </div>
-                <div>
-                    <p class="text-4xl font-bold">10</p>
-                    <p class="text-gray-600">Sub Program</p>
-                </div>
-                <div>
-                    <p class="text-4xl font-bold">200</p>
-                    <p class="text-gray-600">Mitra Pelaksana</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <section class="py-16">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Program Kampus Merdeka</h2>
-                <p class="text-gray-600 mt-4">
-                    Mempersiapkan mahasiswa untuk memberikan kontribusi yang berarti bagi masyarakat, bangsa, dan dunia.
-                </p>
-            </div>
-    
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <img src="/assets/images/kampusmengajar.png" alt="Kampus Mengajar" class=" mx-auto mb-4">
-                    <h3 class="text-xl font-bold text-center mb-2">Kampus Mengajar</h3>
-                    <p class="text-gray-600 text-center">
-                        Bantu tingkatkan kualitas pengajaran pendidikan dasar melalui Kampus Mengajar
-                    </p>
-                    <div class="mt-6 text-center">
-                        <a href="https://kampusmerdeka.kemdikbud.go.id/" class="bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600">
-                            Lebih Lengkap
-                        </a>
-                    </div>
-                </div>
-    
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <img src="/assets/images/msib.png" alt="MSIB" class=" mx-auto mb-4">
-                    <h3 class="text-xl font-bold text-center mb-2">MSIB</h3>
-                    <p class="text-gray-600 text-center">
-                        Rasakan pengalaman dunia kerja dengan terjun langsung melalui  Magang MSIB
-                    </p>
-                    <div class="mt-6 text-center">
-                        <a href="https://kampusmerdeka.kemdikbud.go.id/" class="bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600">
-                            Lebih Lengkap
-                        </a>
-                    </div>
-                </div>
-    
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <img src="/assets/images/IISMA.png" alt="MSIB" class=" mx-auto mb-4">
-                    <h3 class="text-xl font-bold text-center mb-2">IISMA</h3>
-                    <p class="text-gray-600 text-center">
-                        Perluas wawasan dan koneksi melalui Pertukaran Mahasiswa secara Internasional
-                    </p>
-                    <div class="mt-6 text-center">
-                        <a href="https://kampusmerdeka.kemdikbud.go.id/" class="bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600">
-                            Lebih Lengkap
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h1 class="text-3xl font-bold">Merdeka Belajar Kampus Merdeka</h1>
+          <p class="text-xl text-gray-600 mt-4">S1 Sistem Informasi</p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-lg font-bold mb-4">
+              Syarat & Ketentuan Mengikuti Kegiatan MBKM
+            </h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <li>
+                Mahasiswa S1 Sistem Informasi Telkom University Purwokerto
+              </li>
+              <li>
+                Mahasiswa yang mendaftar program MBKM paling minimal semester 6
+              </li>
+              <li>Mahasiswa yang memiliki IPK paling minimal 3.00</li>
+              <li>Mahasiswa harus mengisi surat kesanggupan</li>
+            </ul>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-lg font-bold mb-4">Alur Kegiatan MBKM</h3>
+            <ol class="list-decimal pl-5 space-y-2 text-gray-700">
+              <li>Daftar MBKM di website</li>
+              <li>Menerima hasil lolos/tidak lolos</li>
+              <li>Melakukan pendaftaran ke portal MBKM</li>
+              <li>Mengisi logbook</li>
+              <li>Menyerahkan laporan akhir</li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 text-center shadow-sm p-9 pt-16"
+        >
+          <div>
+            <h3 class="text-4xl font-bold mb-2">
+              <span class="counter" data-val="2300000">0</span>
+            </h3>
+            <p class="text-gray-600">Total Peserta</p>
+          </div>
+          <div>
+            <h3 class="text-4xl font-bold mb-2">
+              <span class="counter" data-val="200">0</span>
+            </h3>
+            <p class="text-gray-600">Program Utama</p>
+          </div>
+          <div>
+            <h3 class="text-4xl font-bold mb-2">
+              <span class="counter" data-val="90">0</span>
+            </h3>
+            <p class="text-gray-600">Sub Program</p>
+          </div>
+          <div>
+            <h3 class="text-4xl font-bold mb-2">
+              <span class="counter text-decoration" data-val="90">0</span>
+            </h3>
+            <p class="text-gray-600">Mitra Pelaksana</p>
+          </div>
+        </div>
+      </div>
     </section>
-    
-    
 
-
-
-    <footer class="bg-[linear-gradient(0deg,#00D084_0%,#7BDCB5_0.01%,#52ADE8_100%)] text-slate-800 mt-20">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Telkom University" class="h-10">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d99bcf5476c00980c86d7e7b4a198e8915953d8b40edf45a3c8e9e54161b7ead?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="Fakultas" class="h-10">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/81e149bf5bb8f1324c162a73fa6e4334c512df6118e3ec46442501b52c6dd5ce?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5" alt="SI Logo" class="h-10">
-                    </div>
-                    <p class="text-sm">Jl. DI Panjaitan No.128, Karangreja, Purwokerto Kidul, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53147 </p>
-                </div>
-
-                <div>
-                    <ul class="space-y-2">
-                        <li>Fakultas Informatika</li>
-                        <li>Fakultas Rekayasa Industri</li>
-                        <li>Fakultas Teknik Elektro</li>
-                        <li>Fakultas Ekonomi Dan Bisnis</li>
-                        <li>Fakultas Industri Kreatif</li>
-                        <li>Fakultas Ilmu Terapan</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Info Kontak</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-6 h-6 bg-white rounded"></div>
-                            <span>No Telpon</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <div class="w-6 h-6 bg-white rounded"></div>
-                            <span>Email</span>
-                        </div>
-                    </div>
-
-                    <h4 class="font-bold mt-8 mb-4">Social Media</h4>
-                    <div class="flex space-x-4">
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                        <div class="w-8 h-8 bg-white rounded"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center pt-8 mt-8 border-t border-white/30">
-                <p>© Telkom University | Universitas Swasta Terbaik </p>
-            </div>
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold">Program Kampus Merdeka</h2>
+          <p class="text-gray-600 mt-4">
+            Mempersiapkan mahasiswa untuk memberikan kontribusi yang berarti
+            bagi masyarakat, bangsa, dan dunia.
+          </p>
         </div>
-    </footer>   
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/kampus-mengajar-logo.4cb4b8b5.webp"
+              alt="Kampus Mengajar"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold text-center mb-2">Kampus Mengajar</h3>
+            <p class="text-gray-600 text-center">
+              Bantu tingkatkan kualitas pengajaran pendidikan dasar melalui
+              Kampus Mengajar
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="https://kampusmerdeka.kemdikbud.go.id/"
+                class="bg-custom-gradient text-white px-10 py-2 rounded-full hover:bg-teal-600"
+              >
+                Lebih Lengkap
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/msib-logo.8402a51e.webp"
+              alt="MSIB"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold text-center mb-2">Magang MSIB</h3>
+            <p class="text-gray-600 text-center">
+              Dapatkan pengalaman dunia kerja secara langsung sebagai persiapan
+              kariermu.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="https://kampusmerdeka.kemdikbud.go.id/"
+                class="bg-custom-gradient text-white px-10 py-2 rounded-full hover:bg-teal-600"
+              >
+                Lebih Lengkap
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/msib-logo.8402a51e.webp"
+              alt="MSIB"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold text-center mb-2">Studi Independen</h3>
+            <p class="text-gray-600 text-center">
+              Jalankan proyek penelitian dengan studi kasus nyata dari para
+              pelaku industri ternama.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="https://kampusmerdeka.kemdikbud.go.id/"
+                class="bg-custom-gradient text-white px-10 py-2 rounded-full hover:bg-teal-600"
+              >
+                Lebih Lengkap
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/wmk-logo.8e10d0f7.webp"
+              alt="MSIB"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold text-center mb-2">
+              Wirausaha Merdeka
+            </h3>
+            <p class="text-gray-600 text-center">
+              Ikuti program unggulan dari berbagai Perguruan Tinggi yang
+              bertujuan untuk meningkatkan kemampuan wirausaha.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="https://kampusmerdeka.kemdikbud.go.id/"
+                class="bg-custom-gradient text-white px-10 py-2 rounded-full hover:bg-teal-600"
+              >
+                Lebih Lengkap
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/iisma-logo.0971cb16.webp"
+              alt="MSIB"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold text-center mb-2">
+              Indonesian International Student Mobility Awards
+            </h3>
+            <p class="text-gray-600 text-center">
+              Program pertukaran dengan universitas lain dari seluruh dunia
+              untuk bertukar budaya.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="https://kampusmerdeka.kemdikbud.go.id/"
+                class="bg-custom-gradient text-white px-10 py-2 rounded-full hover:bg-teal-600"
+              >
+                Lebih Lengkap
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/praktisi-mengajar-logo.f46e6623.webp"
+              alt="MSIB"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold text-center mb-2">
+              Praktisi Mengajar
+            </h3>
+            <p class="text-gray-600 text-center">
+              Ruang kolaborasi antara Praktisi sebagai representasi industri
+              dengan dosen Perguruan Tinggi dalam bentuk pengajaran mata kuliah
+              agar mahasiswa lebih siap untuk masuk ke dunia kerja.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="https://kampusmerdeka.kemdikbud.go.id/"
+                class="bg-custom-gradient text-white px-10 py-2 rounded-full hover:bg-teal-600"
+              >
+                Lebih Lengkap
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/bangkit-logo.9e8bb6b4.webp"
+              alt="MSIB"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold text-center mb-2">
+              Bangkit by Google, GoTo, and Traveloka
+            </h3>
+            <p class="text-gray-600 text-center">
+              Program pertukaran mahasiswa dalam negeri yang memberikan
+              pengalaman langsung untuk lebih memaknai keberagaman budaya
+              nusantara.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="https://kampusmerdeka.kemdikbud.go.id/"
+                class="bg-custom-gradient text-white px-10 py-2 rounded-full hover:bg-teal-600"
+              >
+                Lebih Lengkap
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-mandiri.4e08d727.webp"
+              alt="MSIB"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold text-center mb-2">Magang Mandiri</h3>
+            <p class="text-gray-600 text-center">
+              Temukan pengalaman dunia kerja yang dikelola langsung oleh
+              perusahaan tanpa ada batasan kuota dan jadwal yang lebih
+              fleksibel.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="https://kampusmerdeka.kemdikbud.go.id/"
+                class="bg-custom-gradient text-white px-10 py-2 rounded-full hover:bg-teal-600"
+              >
+                Lebih Lengkap
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-custom-gradient text-slate-800 mt-20">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d327a48ab05747e181d59c0577bde90e9b54fe51a71897e83c85e3913b42c3e1?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+                alt="Telkom University"
+                class="h-10"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d99bcf5476c00980c86d7e7b4a198e8915953d8b40edf45a3c8e9e54161b7ead?placeholderIfAbsent=true&apiKey=48c94a01366d43c59b1da59368dd9ce5"
+                alt="Fakultas"
+                class="h-10"
+              />
+            </div>
+            <p class="text-sm">
+              Jl. DI Panjaitan No.128, Karangreja, Purwokerto Kidul, Kec.
+              Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53147
+            </p>
+          </div>
+
+          <div>
+            <ul class="space-y-2">
+              <li>Fakultas Informatika</li>
+              <li>Fakultas Rekayasa Industri</li>
+              <li>Fakultas Teknik Elektro</li>
+              <li>Fakultas Ekonomi Dan Bisnis</li>
+              <li>Fakultas Industri Kreatif</li>
+              <li>Fakultas Ilmu Terapan</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Info Kontak</h4>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-6 h-6 bg-white rounded flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-phone text-gray-600"></i>
+                </div>
+                <span>(022) 7566456</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-6 h-6 bg-white rounded flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-envelope text-gray-600"></i>
+                </div>
+                <span>info@telkomuniversity.ac.id</span>
+              </div>
+            </div>
+            <h4 class="font-bold mt-8 mb-4">Social Media</h4>
+            <div class="flex space-x-4">
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-telegram text-blue-500"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-facebook text-blue-600"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-twitter text-blue-400"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-white rounded flex items-center justify-center"
+              >
+                <i class="fa-brands fa-instagram text-pink-500"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center pt-8 mt-8 border-t border-white/30">
+          <p>© Telkom University | Universitas Swasta Terbaik</p>
+        </div>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

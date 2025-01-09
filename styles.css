@@ -54,14 +54,40 @@
 
 
 .content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
 }
 
-.content.active {
-    max-height: 1000px;
-    transition: max-height 0.5s ease-in;
+.section {
+  transition: all 0.3s ease-out;
+  width: calc(50% - 1rem);
+}
+
+.section.active {
+  width: 100%;
+}
+
+.active .content {
+  max-height: 2000px;
+}
+
+.active .arrow {
+  transform: rotate(90deg);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.sections-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.section:not(.active) {
+  flex-grow: 0;
 }
 
 .arrow {

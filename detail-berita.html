@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berita - S1 Sistem Informasi Telkom University</title>
     <link href="output.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Fakultas Dan Staff</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -39,10 +35,7 @@
             <a href="/index.html" class="text-gray-700">Beranda</a>
 
             <div class="dropdown relative">
-              <button
-                id="dropdownButton"
-                class="text-sky-400 flex items-center space-x-1"
-              >
+              <button id="dropdownButton" class="flex items-center space-x-1">
                 <span>Tentang Kami</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -104,112 +97,190 @@
       </div>
     </nav>
 
-    <section
-      class="pt-20 bg-custom-gradient from-sky-400 via-teal-400 to-teal-300"
-    >
-      <div class="container mx-auto px-4 py-32 text-center text-white">
-        <h1 class="text-5xl font-bold mb-4">Fakultas dan Staff</h1>
-        <p class="text-xl">S1 Sistem Informasi</p>
+    <div class="relative h-[300px] mb-8">
+      <div class="absolute inset-0 bg-black/50">
+        <img
+          src="/assets/images/hero-berita.png"
+          alt="Telkom University Building"
+          class="w-full h-full object-cover mix-blend-overlay"
+        />
       </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto py-16">
-      <div class="container mx-auto px-4 justify-end">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 ml-auto">
-          <div
-            class="card border p-4 rounded-lg"
-            data-name="Dwi Mustika Kusumawardani S.Kom., M.Kom"
-            data-id="DMK"
-            data-img="/assets/images/1.png"
-            data-email="dwimustika@gmail.com"
-            onclick="openModal(this)"
-          >
-            <img
-              src="/assets/images/1.png"
-              alt="Avatar"
-              class="rounded-full mx-auto"
-            />
-            <h3 class="text-center mt-2 font-bold">
-              Dwi Mustika Kusumawardani S.Kom., M.Kom
-            </h3>
-          </div>
-
-          <div
-            class="card border p-4 rounded-lg"
-            data-name="Khairun Nisa Meiah Ngafidin S.Pd"
-            data-id="KNM"
-            data-img="/assets/images/Khairun-Nisa-Meiah-NgafidinS.Pd.png"
-            data-email="Khairun@gmail.com"
-            onclick="openModal(this)"
-          >
-            <img
-              src="/assets/images/Khairun-Nisa-Meiah-NgafidinS.Pd.png"
-              alt="Avatar"
-              class="rounded-full mx-auto"
-            />
-            <h3 class="text-center mt-2 font-bold">
-              Khairun Nisa Meiah Ngafidin S.Pd
-            </h3>
-          </div>
-
-          <div
-            class="card border p-4 rounded-lg"
-            data-name="Mahazzam Afrad S.Kom"
-            data-id="0081"
-            data-img="/assets/images/Mahazzam-Afrad-S.Kom_.Kom.png"
-            data-email="mahazzam@gmail.com"
-            data-nip="123123123"
-            data-nidn="28302830"
-            onclick="openModal(this)"
-          >
-            <img
-              src="/assets/images/Mahazzam-Afrad-S.Kom_.Kom.png"
-              alt="Avatar"
-              class="rounded-full mx-auto"
-            />
-            <h3 class="text-center mt-2 font-bold">Mahazzam Afrad S.Kom</h3>
-          </div>
+      <div class="relative h-full flex items-center">
+        <div class="container mx-auto px-4">
+          <h1 class="text-4xl font-bold text-white max-w-3xl">
+            Telkom University Raih Sertifikasi ISO 27001:2022 untuk Data Center
+            dan LMS
+          </h1>
         </div>
       </div>
-    </section>
+    </div>
 
-    <div
-      id="modal"
-      class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden"
-    >
-      <div class="bg-white rounded-lg p-6 max-w-md w-full relative">
-        <button
-          class="absolute top-2 right-2 text-gray-500"
-          onclick="closeModal()"
-        >
-          ✖
-        </button>
-        <h3
-          class="text-2xl font-bold text-center text-gray-800"
-          id="modal-name"
-        ></h3>
-        <div class="flex items-center mt-6">
-          <div class="w-32 h-32 flex-shrink-0">
-            <img
-              id="modal-avatar"
-              src="https://via.placeholder.com/150"
-              alt="Avatar"
-              class="w-full h-full rounded-full object-cover"
-            />
-          </div>
-          <div class="ml-6 text-gray-700">
-            <p id="modal-id">Kode: ODR</p>
-            <p id="modal-nip">NIP: 034567</p>
-            <p id="modal-nidn">NIDN: 3467980978</p>
-            <p id="modal-email">Email: sample@gmail.com</p>
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row gap-8">
+      <div class="lg:w-2/3">
+        <div class="mb-6">
+          <img
+            src="/assets/images/Telkom-University-Raih-Sertifikasi-ISO-27001-2022-untuk-Data-Center-dan-LMS--1200x600.jpg.png"
+            alt="Team Photo"
+            class="w-full rounded-lg"
+          />
+        </div>
+
+        <div class="text-gray-500 mb-6">
+          <span class="mr-4">📅 Prestasi</span>
+        </div>
+
+        <div class="prose max-w-none">
+          <p class="mb-4">
+            <strong>Bandung, 3 Januari 2025</strong> - Telkom University
+            berhasil meraih Sertifikasi ISO 27001:2022 setelah melalui proses
+            audit yang dilakukan oleh British Standard Institution (BSI)
+            Indonesia. Sertifikasi ini menegaskan komitmen Telkom University
+            dalam menjaga keamanan informasi pada layanan Data Center Core
+            Network dan Learning Management System (LMS).
+          </p>
+
+          <p class="mb-4">
+            1. Audit Tahap 1 <br />
+            Dilaksanakan pada 28-29 November 2024, audit ini dipimpin oleh Bapak
+            Eraldy Wardhanu sebagai auditor tunggal. Audit Tahap I bertujuan
+            untuk memverifikasi kesiapan sistem manajemen keamanan informasi
+            sebelum dilanjutkan ke tahap berikutnya.
+          </p>
+
+          <p class="mb-4">
+            2. Audit Tahap 2 <br />
+            Dilaksanakan pada 11-13 Desember 2024, audit ini melibatkan tiga
+            auditor, yaitu Ratu Intan Permatasari, Nikson Badua Putra, dan Harry
+            Eko Ujiantoro Basuki. Audit Tahap II berfokus pada implementasi dan
+            efektivitas sistem manajemen keamanan informasi yang diterapkan di
+            Telkom University.
+          </p>
+
+          <p class="mb-4">
+            Pada sesi Closing Meeting Audit, auditor menyampaikan hasil yang
+            menyatakan bahwa Telkom University telah memenuhi seluruh standar
+            ISO 27001:2022. Hal ini menjadi pencapaian penting bagi Telkom
+            University dalam menjaga keandalan dan keamanan data serta mendukung
+            proses pembelajaran yang berbasis teknologi informasi.
+          </p>
+
+          <p class="mb-8">
+            Dengan diraihnya sertifikasi ini, Telkom University semakin
+            memperkuat posisinya sebagai perguruan tinggi berbasis teknologi
+            yang mengedepankan keamanan informasi dalam setiap layanannya.
+          </p>
+        </div>
+
+        <!-- Author Info -->
+        <div class="border-t pt-4 mb-8">
+          <p class="text-sm text-gray-600">
+            Penulis: Abdullah admin | Editor: Adrian Wiranata | Foto: Public
+            Relations
+          </p>
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="flex gap-2 mb-8">
+          <button class="py-2 px-3 bg-blue-600 text-white rounded-full">
+            <span> <i class="fa-brands fa-facebook"></i></span>
+          </button>
+          <button class="py-2 px-3 bg-black text-white rounded-full">
+            <span><i class="fa-brands fa-square-x-twitter"></i></span>
+          </button>
+          <button class="py-2 px-3 bg-blue-500 text-white rounded-full">
+            <span><i class="fa-brands fa-linkedin"></i></span>
+          </button>
+          <button class="py-2 px-3 bg-green-500 text-white rounded-full">
+            <span><i class="fa-brands fa-whatsapp"></i></span>
+          </button>
+          <button class="py-2 px-3 bg-blue-400 text-white rounded-full">
+            <span><i class="fa-brands fa-telegram"></i></span>
+          </button>
+        </div>
+
+        <!-- Categories -->
+        <div class="mb-8">
+          <h3 class="text-sm font-semibold mb-2">
+            KATEGORI BERITA ATAU KEGIATAN
+          </h3>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">
+              Telkom University Raih Sertifikasi ISO 27001:2022 untuk Data
+              Center dan LMS
+            </span>
           </div>
         </div>
-        <button
-          class="mt-10 bg-custom-gradient text-white px-4 py-2 rounded-full items-center"
-          onclick="closeModal()"
-        >
-          Kembali
-        </button>
+
+        <!-- Comment Form -->
+        <div class="mb-8">
+          <h3 class="text-xl font-bold mb-4">Tinggalkan Balasan</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Alamat email Anda tidak akan dipublikasikan. Ruas yang wajib
+            ditandai *
+          </p>
+          <form class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <input
+                type="text"
+                placeholder="Name *"
+                class="p-2 border rounded"
+              />
+              <input
+                type="email"
+                placeholder="Email *"
+                class="p-2 border rounded"
+              />
+              <input
+                type="url"
+                placeholder="Website"
+                class="p-2 border rounded"
+              />
+            </div>
+            <textarea
+              placeholder="Comment *"
+              rows="6"
+              class="w-full p-2 border rounded"
+            ></textarea>
+            <button
+              type="submit"
+              class="px-4 py-2 bg-custom-gradient text-white rounded"
+            >
+              Kirim Komentar
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="lg:w-1/3">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-bold mb-4">Berita Terkini</h2>
+          <ul class="space-y-4">
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">
+                Telkom University Raih Sertifikasi ISO 27001:2022 untuk Data
+                Center dan LMS
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">
+                Meningkatkan Kualitas Diri di Tahun Baru, Resolusi Mahasiswa
+                untuk Sukses Akademik dan Personal
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">
+                Vision Board 101: Kenali Definisi hingga Cara Kekinian Merancang
+                Masa Depan untuk Mahasiswa!
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">
+                Wakil Rektor Bidang Sumber Daya, Lakukan Pemantauan Keamanan dan
+                Kebersihan Kampus Menyambut Libur Nataru
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
